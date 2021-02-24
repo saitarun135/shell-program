@@ -1,4 +1,5 @@
 #!/bin/bash -x
+
 read -p "Enter The valid  number (0-6) : " num
 if [ $num -eq 0 ]
 then
