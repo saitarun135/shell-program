@@ -1,4 +1,5 @@
 #!/bin/bash -x
+
 empChk=$((RANDOM%3))
 isFullTime=2;
 isPartTime=1
