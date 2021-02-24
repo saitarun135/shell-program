@@ -1,4 +1,5 @@
 #!/bin/bash 
+
 read -p "enter two digit value:" num1;
 read -p "enter two digit value:" num2;
 read -p "enter two digit value:" num3;
