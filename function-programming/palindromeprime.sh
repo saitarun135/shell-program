@@ -35,20 +35,15 @@ read -p "1)for prime method 2) for palindrome 3) for equating prime-palindrome "
 	case $options in
 		1) 
 				read -p "enter the value: " PrimeCheckNum
-			isPrime $PtimeCheckNum
+			isPrime $PrimeCheckNum
 			;;
 		2) 
 				read -p "enter the value:" n
-				if [ $n -eq $(isPalindrome $n) ]
-					then
-						echo "$n is Pallindrome number"
-					else
-						echo "$n is not pallindrome number"
-				fi
+				isPalindrome $n
 					;;
 		3)
 			read -p "check palindrome and prime :"Prime_Pallin_Num
-isPrime $(isPalindrome $Prime_Palllin_Num)			
+isPrime $(isPalindrome $Prime_Pallin_Num)			
 #isPrime $(isPalindrome $Prime_Pallin_Num)
 		;;
 		*)
