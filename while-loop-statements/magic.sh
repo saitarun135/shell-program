@@ -1,38 +1,30 @@
-#!/bin/bash -x
+#! /bin/bash
+echo Think  any number between 1 to 100 
+low=1;
+high=100;
 
-echo "Think any number between 1 to 100"
-
-# INITIALIZING VARIABLE
-low=1
-high=100
-medium=0
-
-# TO FIND MAGIC NUMBER WHICH HAS BEEN GUESSED BY USER
-while [ $low -ne $medium ]
+while [ $low -lt $high ]
 do
-	medium=$(( low + (high-low)/2 ))
-
-	read -p "Enter 1 if number is less than $medium or Enter 0 if number is greater than $medium: " answer
-
-	if [ $medium -eq $low ]
-	then
-		if [ $answer -eq 1 ]
-		then
-			#echo $medium
-			break
-		else
-			echo $((medium+1))
-			break
-		fi
-	fi
-
-	if [ $answer -eq 1 ]
-	then
-		high=$medium
-	else
-		low=$(( $medium + 1 ))
-	fi
+	mid=$(( $(($low+$high))/2 ))
+	echo "press 1 if your value is mid=" $mid 
+	echo "press 2 if your value is greater than $mid"
+	echo "press 3 if your value is lesser than $mid" 
+	echo "your choice"
+	read choice
+	case $choice in
+		1)
+			break;
+		;;
+		2)
+			low=$mid
+		;;
+		3)
+			high=$mid
+		;;
+		*)
+			echo "enter valid choice(1-3)"
+		;;
+	esac
 done
-
-# TO 	PRINT MAGIC NUMBER
-echo Magic Number is $medium
+	
+echo "Your number is" $mid
